@@ -1,0 +1,49 @@
+name: ProjectTests
+
+on:
+  push:
+    paths:
+      - 'sources/**'
+      - '.github/workflows/launch.yaml'
+  pull_request:
+    paths:
+      - 'sources/**'
+      - '.github/workflows/launch.yaml'
+
+jobs:
+  TestProject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.9.7
+
+      - name: Install Depedencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3-pip
+          /opt/hostedtoolcache/Python/3.9.7/x64/bin/python -m pip install --upgrade pip
+
+      - name: Launch Subject Tests
+        run: |
+          ./308reedpipes 2 3 2 4 5 13 >> testResult
+          ./308reedpipes 0.5 2 2 2 5 11 >> testResult
+
+      - name: Launch Error Handling Test 1
+        continue-on-error: true
+        run: ./308reedpipes 0 2 2 2 5 11 >> testResult
+
+      - name: Launch Error Handling Test 2
+        continue-on-error: true
+        run: ./308reedpipes -0.5 2 2 2 5 11 >> testResult
+
+      - name: Launch Error Handling Test 3
+        continue-on-error: true
+        run: ./308reedpipes a 2 2 2 5 11 >> testResult
+
+      - uses: actions/upload-artifact@v2
+        with:
+          path: |
+            ./testResult
