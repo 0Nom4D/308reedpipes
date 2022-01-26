@@ -51,6 +51,6 @@ class Reedpipe:
         for i in range(self._n):
             print(f'abscissa: {self._pointAbscissas[i]:.1f} cm\tradius: {self._radiusValues[i]:.1f} cm')
 
-    def runEngine(self) -> bool:
+    def runEngine(self) -> None:
         self._computeVectorComponents()
         self._displayResults()
