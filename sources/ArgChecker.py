@@ -13,7 +13,7 @@ class ArgChecker:
     def check_args_types(self, args: list) -> bool:
         self._args = list()
 
-        for number in args:
+        for number in args[:-1]:
             try:
                 value = float(number)
             except ValueError as error:
@@ -21,6 +21,13 @@ class ArgChecker:
                 print(f"ValueError: ArgChecker.py:21\n{error.args[0]}")
                 return False
             self._args.append(value)
+        try:
+            value = int(args[-1])
+        except ValueError as error:
+            self._args = None
+            print(f"ValueError: ArgChecker.py:21\n{error.args[0]}")
+            return False
+        self._args.append(value)
         if any(i <= 0 for i in self._args):
             self._args = None
             return False

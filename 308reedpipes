@@ -6,6 +6,7 @@
 ## main
 
 from sources.ArgChecker import ArgChecker
+from sources.Reedpipe import Reedpipe
 from sources.exitCode import exitCode
 from sys import argv
 
@@ -31,6 +32,8 @@ def main() -> int:
     arg_handler = ArgChecker()
     if not arg_handler.check_args_types(argv[1:]):
         return exitCode.ERROR
+    my_engine = Reedpipe(arg_handler.get_args_list())
+    my_engine.runEngine()
     return exitCode.OK
 
 
