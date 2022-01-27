@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2021
 ## 308reedpipes
 ## File description:
-## t_ArgChecker
+## test_Reedpipe
 ##
 
 from sources.Reedpipe import Reedpipe
