@@ -20,6 +20,9 @@ To use this project, you'll need Python (Version 3.8) and Pytest for Unit Tests:
 
 * [Python Installation](https://www.python.org/downloads/)
 * [Pytest Installation](https://docs.pytest.org/en/6.2.x/getting-started.html#install-pytest)
+* [Numpy Installation](https://pypi.org/project/numpy/)
+* [Matplotlib Installation](https://pypi.org/project/matplotlib/)
+* [Scipy Installation](https://pypi.org/project/scipy/)
 
 ### Building program
 
@@ -63,6 +66,12 @@ _____________________                  ...                ______________________
 $> coverage report -m
 // In order to show coverage report
 ```
+
+### Bonus
+
+This version of 308reedpipes includes a bonus which creates a graph showing a 2D shape of the constructed reedpipe.
+
+![Alt Text](https://github.com/0Nom4D/308reedpipes/bonus/blob/master/reedpipe_analysis.png)
 
 ### Coding Style
 
