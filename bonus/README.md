@@ -71,7 +71,7 @@ $> coverage report -m
 
 This version of 308reedpipes includes a bonus which creates a graph showing a 2D shape of the constructed reedpipe.
 
-![Alt Text](https://github.com/0Nom4D/308reedpipes/bonus/blob/master/reedpipe_analysis.png)
+![Alt Text](https://github.com/0Nom4D/308reedpipes/blob/master/bonus/reedpipe_analysis.png)
 
 ### Coding Style
 
